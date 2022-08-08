@@ -1,0 +1,105 @@
+level=WARN ts=2022-08-08 10:56:08.892 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 10:56:09.302 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: eb3ef4ff-2134-406b-a300-26edf4e6ec06
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 10:56:18.499 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 10:56:19.695 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 48995a8b-238b-4760-82c7-62c780eb54fb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 10:56:20.029 caller=restartedMain component=org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer discovery=D msg=Unable to start LiveReload server
+level=WARN ts=2022-08-08 10:56:20.062 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+level=WARN ts=2022-08-08 10:57:06.220 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 10:57:06.585 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: da4c825a-2af0-44c7-aac3-4f33560a2a10
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 10:57:14.052 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 10:57:15.246 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: d8dfd187-1e3c-408d-8166-abeeb1b25343
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 10:57:15.609 caller=restartedMain component=org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer discovery=D msg=Unable to start LiveReload server
+level=WARN ts=2022-08-08 10:57:15.640 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8090 is already in use
+level=WARN ts=2022-08-08 10:57:58.798 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 10:58:00.253 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 3372fff1-4990-4dd4-817a-bdbf78cb77e1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 12:51:11.534 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.projectV1.uniProject.Entities.Student.courses[com.projectV1.uniProject.Entities.Course]
+level=WARN ts=2022-08-08 12:51:49.237 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.projectV1.uniProject.Entities.Student.courses[com.projectV1.uniProject.Entities.Course]
+level=WARN ts=2022-08-08 12:52:16.591 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.projectV1.uniProject.Entities.Student.courses[com.projectV1.uniProject.Entities.Course]
+level=WARN ts=2022-08-08 12:52:57.862 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 12:52:59.392 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 775d0e1b-4785-494f-83f4-83c333076db7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 13:11:11.054 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Export identifier [student_enroll_course] encountered more than once
+level=WARN ts=2022-08-08 13:12:09.907 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Export identifier [student_enroll_course] encountered more than once
+level=WARN ts=2022-08-08 13:18:18.997 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.projectV1.uniProject.Entities.StudentEnrollCourse.course_id references an unknown entity: int
+level=WARN ts=2022-08-08 13:19:24.797 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 13:19:26.199 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 58810f00-f1d9-4ff6-a154-50361a112857
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 13:20:40.507 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 13:20:42.112 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: a0a55935-335e-4fdb-811e-fe648d250433
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 13:26:52.455 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 13:26:54.047 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 278e4e4d-7e46-4eb1-a8a1-0447158b5efe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 15:15:57.164 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'controller': Unsatisfied dependency expressed through field 'studentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'studentService' defined in file [/home/dhaini/Desktop/MontyMobile Training /uniProject/target/classes/com/projectV1/uniProject/Services/StudentService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'studentRepository' defined in com.projectV1.uniProject.Repositories.StudentRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract com.projectV1.uniProject.Entities.Student com.projectV1.uniProject.Repositories.StudentRepository.findByUsername(java.lang.String); Reason: Failed to create query for method public abstract com.projectV1.uniProject.Entities.Student com.projectV1.uniProject.Repositories.StudentRepository.findByUsername(java.lang.String)! No property 'username' found for type 'Student'; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.projectV1.uniProject.Entities.Student com.projectV1.uniProject.Repositories.StudentRepository.findByUsername(java.lang.String)! No property 'username' found for type 'Student'
+level=WARN ts=2022-08-08 15:16:36.327 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 15:16:37.687 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: 81dd58ae-3055-405b-8243-48045dd5e68a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 15:17:24.199 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 15:17:24.566 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: dcbec7b5-2bb8-4afa-af7b-8f2186ec22a5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 15:17:29.391 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 15:17:29.702 caller=restartedMain component=org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration discovery=D msg=
+
+Using generated security password: a39df4f4-510a-4f67-9e7f-6755889420ad
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+level=WARN ts=2022-08-08 16:18:31.790 caller=restartedMain component=org.springframework.context.support.AbstractApplicationContext discovery=D msg=Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+level=WARN ts=2022-08-08 16:19:55.396 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 16:32:03.543 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 16:41:44.061 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 16:41:49.545 caller=http-nio-8080-exec-1 component=org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver discovery=D msg=Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+level=WARN ts=2022-08-08 16:41:53.976 caller=http-nio-8080-exec-3 component=org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver discovery=D msg=Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------897929086021025697693852;charset=UTF-8' not supported]
+level=WARN ts=2022-08-08 16:42:22.495 caller=http-nio-8080-exec-4 component=org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver discovery=D msg=Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------590698439101236454084423;charset=UTF-8' not supported]
+level=WARN ts=2022-08-08 16:43:44.639 caller=restartedMain component=org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration discovery=D msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+level=WARN ts=2022-08-08 16:43:50.098 caller=http-nio-8080-exec-2 component=org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver discovery=D msg=Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------152575252828069687754410;charset=UTF-8' not supported]
+level=WARN ts=2022-08-08 16:44:16.997 caller=http-nio-8080-exec-3 component=org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver discovery=D msg=Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
