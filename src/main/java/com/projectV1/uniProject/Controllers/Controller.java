@@ -1,5 +1,6 @@
 package com.projectV1.uniProject.Controllers;
 
+import com.projectV1.uniProject.Entities.Student;
 import com.projectV1.uniProject.Entities.StudentEnrollCourse;
 import com.projectV1.uniProject.Entities.Users;
 import com.projectV1.uniProject.Exceptions.RoleInvalidException;
@@ -29,4 +30,14 @@ public class Controller {
     public Response registerUser(@RequestBody Users user) throws RoleInvalidException {
         return userService.registerUser(user);
     }
+    @GetMapping(value = "/loginUser")
+    public Object loginUser(@RequestParam String username, @RequestParam String password) throws RoleInvalidException {
+        return userService.authenticateUser(username, password);
+    }
+
+    @PostMapping(value = "/addStudent")
+    public Response addStudent(@RequestBody Student student){
+        return
+    }
+
 }
