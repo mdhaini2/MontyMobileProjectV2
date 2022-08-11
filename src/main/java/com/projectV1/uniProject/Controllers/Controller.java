@@ -1,9 +1,8 @@
 package com.projectV1.uniProject.Controllers;
 
-import com.projectV1.uniProject.Entities.Student;
-import com.projectV1.uniProject.Entities.StudentEnrollCourse;
 import com.projectV1.uniProject.Entities.Users;
 import com.projectV1.uniProject.Exceptions.RoleInvalidException;
+import com.projectV1.uniProject.Exceptions.UserNotFoundException;
 import com.projectV1.uniProject.Services.InstructorService;
 import com.projectV1.uniProject.Services.StudentEnrollCourseService;
 import com.projectV1.uniProject.Services.StudentService;
@@ -35,9 +34,17 @@ public class Controller {
         return userService.authenticateUser(username, password);
     }
 
-    @PostMapping(value = "/addStudent")
-    public Response addStudent(@RequestBody Student student){
-        return
+    @PutMapping(value = "/updateUser")
+    public Response updateUser(@RequestParam int id, @RequestParam String username, @RequestParam    String password) throws UserNotFoundException {
+        return userService.updateUser(id,username,password);
     }
+
+    @GetMapping(value = "/getAllUsers")
+    public Response getAllUser(){
+        return  userService.getAllUsers();
+    }
+
+
+
 
 }

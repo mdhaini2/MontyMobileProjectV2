@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.sql.SQLException;
+
 @ControllerAdvice
 public class GlobalException {
 
@@ -17,6 +19,45 @@ public class GlobalException {
         errorObject.setMessage(exception.getMessage());
         errorObject.setTimestamp(System.currentTimeMillis());
         return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_ACCEPTABLE);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleStudentNotFoundException(StudentNotFoundException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleUserNotFoundException(UserNotFoundException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+
+    }
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleSQLException(SQLException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_ACCEPTABLE.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_ACCEPTABLE);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleInstructorNotFoundException(InstructorNotFoundException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
 
     }
 }

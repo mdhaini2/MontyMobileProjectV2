@@ -2,6 +2,7 @@ package com.projectV1.uniProject.Services;
 
 import com.projectV1.uniProject.Entities.Users;
 import com.projectV1.uniProject.Exceptions.RoleInvalidException;
+import com.projectV1.uniProject.Exceptions.UserNotFoundException;
 import com.projectV1.uniProject.Repositories.UserRepository;
 import com.projectV1.uniProject.Utils.JwtUtil;
 import com.projectV1.uniProject.Utils.Response;
@@ -12,8 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Service
 @Log4j2
@@ -49,12 +49,39 @@ public class UserService {
 
     public Response registerUser(Users user) throws RoleInvalidException {
         String role = user.getRole();
-        if(!role.equalsIgnoreCase("Student")||!role.equalsIgnoreCase("Instructor")){
-            throw new RoleInvalidException(role + " is not a valid role!");
+        log.info(role);
+        if (role.equalsIgnoreCase("Student") || role.equalsIgnoreCase("Instructor")) {
+            user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+
+            userRepository.save(user);
+            Response response = new Response(200, "User registered Successfully", user);
+            return response;
+
+
         }
-        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        throw new RoleInvalidException(role + " is not a valid role!");
+    }
+
+    public Response updateUser(int id, String username, String password) throws UserNotFoundException {
+        Users user = userRepository.findById(id).get();
+        if (user == null) {
+            throw new UserNotFoundException("User with id:" + id + " not found");
+        }
+        if (!username.equalsIgnoreCase("")) {
+            user.setUsername("");
+            user.setUsername(username);
+        }
+        if (!password.equalsIgnoreCase("")) {
+            user.setPassword(new BCryptPasswordEncoder().encode(password));
+        }
         userRepository.save(user);
-        Response response = new Response(200, "User registered Successfully", user);
+        Response response = new Response(200, "User updated successfully", user);
+        return response;
+    }
+
+    public Response getAllUsers(){
+        List<Users> usersList = userRepository.findAll();
+        Response response = new Response(200,"Users retrieved successfully",usersList);
         return response;
     }
 }
