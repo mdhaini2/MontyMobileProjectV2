@@ -1,9 +1,10 @@
 package com.projectV1.uniProject.Entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class StudentEnrollCourse {
+public class StudentEnrollCourse implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,6 +19,17 @@ public class StudentEnrollCourse {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
+
+    public StudentEnrollCourse(String studentGrade, String status, Student student, Course course) {
+        this.studentGrade = studentGrade;
+        this.status = status;
+        this.student = student;
+        this.course = course;
+    }
+
+    public StudentEnrollCourse() {
+    }
+
 
     public Course getCourse() {
         return course;
@@ -57,5 +69,16 @@ public class StudentEnrollCourse {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentEnrollCourse{" +
+                "id=" + id +
+                ", studentGrade='" + studentGrade + '\'' +
+                ", status='" + status + '\'' +
+                ", student=" + student +
+                ", course=" + course +
+                '}';
     }
 }

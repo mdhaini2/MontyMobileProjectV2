@@ -35,10 +35,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/uniProject/registerUser", "/uniProject/loginUser").permitAll()
-                .antMatchers(HttpMethod.DELETE).hasAnyRole("student ")
-                .antMatchers(HttpMethod.GET).hasAnyRole("student ")
-                .antMatchers(HttpMethod.POST).hasAnyRole("student ")
-                .antMatchers(HttpMethod.PUT).hasAnyRole("student ")
+                .antMatchers("/student/*").hasAnyRole("student")
+                .antMatchers(HttpMethod.GET).hasAnyRole("student")
+                .antMatchers(HttpMethod.POST).hasAnyRole("student")
+                .antMatchers(HttpMethod.PUT).hasAnyRole("student")
                 .anyRequest().authenticated().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

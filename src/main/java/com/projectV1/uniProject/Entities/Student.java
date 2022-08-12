@@ -1,5 +1,7 @@
 package com.projectV1.uniProject.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,14 +12,14 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "user_id")
     private Users user;
     private String fullName;
     private String dob;
     private double gpa;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
     private Set<StudentEnrollCourse> enrolledCourses = new HashSet<StudentEnrollCourse>();
 

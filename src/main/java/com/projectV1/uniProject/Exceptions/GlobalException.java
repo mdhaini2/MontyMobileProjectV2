@@ -41,6 +41,7 @@ public class GlobalException {
         return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
 
     }
+
     @ExceptionHandler
     public ResponseEntity<ErrorObject> handleSQLException(SQLException exception) {
         ErrorObject errorObject = new ErrorObject();
@@ -58,6 +59,56 @@ public class GlobalException {
         errorObject.setMessage(exception.getMessage());
         errorObject.setTimestamp(System.currentTimeMillis());
         return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleStudentEnrollException(StudentEnrollException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleInstructorCourseException(InstructorCourseException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_ACCEPTABLE.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_ACCEPTABLE);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleGradeNotValidException(GradeNotValidException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_ACCEPTABLE.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_ACCEPTABLE);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleCourseNotFoundException(CourseNotFoundException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.NOT_FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleCourseEnrollExistsException(CourseEnrollExistsException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.FOUND.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.FOUND);
 
     }
 }

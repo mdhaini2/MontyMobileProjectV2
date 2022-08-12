@@ -29,22 +29,21 @@ public class Controller {
     public Response registerUser(@RequestBody Users user) throws RoleInvalidException {
         return userService.registerUser(user);
     }
+
     @GetMapping(value = "/loginUser")
     public Object loginUser(@RequestParam String username, @RequestParam String password) throws RoleInvalidException {
         return userService.authenticateUser(username, password);
     }
 
     @PutMapping(value = "/updateUser")
-    public Response updateUser(@RequestParam int id, @RequestParam String username, @RequestParam    String password) throws UserNotFoundException {
-        return userService.updateUser(id,username,password);
+    public Response updateUser(@RequestParam int id, @RequestParam String username, @RequestParam String password) throws UserNotFoundException {
+        return userService.updateUser(id, username, password);
     }
 
     @GetMapping(value = "/getAllUsers")
-    public Response getAllUser(){
-        return  userService.getAllUsers();
+    public Response getAllUser() {
+        return userService.getAllUsers();
     }
-
-
 
 
 }

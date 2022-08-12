@@ -1,5 +1,7 @@
 package com.projectV1.uniProject.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,15 +11,12 @@ public class Instructor {
     private int id;
     private String fullName;
     private String department;
+    @JsonIgnore
 
     @OneToOne
     @JoinColumn(name = "user_id")
     private Users user;
 
-
-    @OneToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
 
     public Users getUser() {
         return user;
@@ -27,13 +26,6 @@ public class Instructor {
         this.user = user;
     }
 
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
 
     public int getId() {
         return id;
