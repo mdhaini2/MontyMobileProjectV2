@@ -38,4 +38,14 @@ public class CourseController {
         return courseService.deleteCourse(courseId);
     }
 
+    @GetMapping(value = "/getAllCourses")
+    public Response getAllCourses(){
+        return courseService.getAllCourses();
+    }
+
+    @GetMapping(value = "/getAllStudentEnrolled")
+    public Response getAllStudentEnrolled(@RequestParam int courseId){
+        return courseService.getAllStudentEnrolled(courseId);
+    }
+
 }

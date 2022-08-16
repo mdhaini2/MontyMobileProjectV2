@@ -111,4 +111,14 @@ public class GlobalException {
         return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.FOUND);
 
     }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handleInstructorExistsException(InstructorExistsException exception) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.CONFLICT.value());
+        errorObject.setMessage(exception.getMessage());
+        errorObject.setTimestamp(System.currentTimeMillis());
+        return new ResponseEntity<ErrorObject>(errorObject, HttpStatus.CONFLICT);
+
+    }
 }

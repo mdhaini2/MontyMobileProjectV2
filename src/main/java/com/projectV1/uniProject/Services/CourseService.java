@@ -15,6 +15,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -173,5 +174,19 @@ public class CourseService {
                 throw new GradeNotValidException(grade + " is not a valid grade");
         }
         return points;
+    }
+
+    public Response getAllCourses() {
+        List<Course> courseList = courseRepository.findAll();
+        Response response = new Response(200,"All courses retrieved successfully",courseList);
+        return response;
+    }
+
+    public Response getAllStudentEnrolled(int courseId) {
+        Course course = courseRepository.findById(courseId).get();
+        Set<StudentEnrollCourse> enrollCourseSet = course.getStudentEnrolled();
+
+        Response response = new Response(200,"Students enrolled in course "+course.getName()+ " retrieved successfully",enrollCourseSet);
+        return response;
     }
 }

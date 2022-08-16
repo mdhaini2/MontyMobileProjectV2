@@ -35,11 +35,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/uniProject/registerUser", "/uniProject/loginUser").permitAll()
-                .antMatchers("/student/getAllStudents","/enrollCourse").hasRole("student")
-                .antMatchers("/instructor/*").hasAnyRole("instructor")
-                .antMatchers("/course/deleteCourse",
+                .antMatchers("/student/*", "/course/enrollCourse").hasAnyRole("student")
+                .antMatchers("/instructor/*",
+                        "/course/deleteCourse",
+                        "/student/getAllStudent",
                         "/course/addCourse/{instructor_id}",
                         "/course/instructorUpdateStudentGrade").hasAnyRole("instructor")
+                .antMatchers("/uniProject/getAllUsers", "/uniProject/updateUser").hasAnyRole("student", "instructor")
                 .anyRequest().authenticated().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

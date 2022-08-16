@@ -33,4 +33,9 @@ public class StudentController {
     public Response getAllStudents(){
         return studentService.getAllStudents();
     }
+
+    @GetMapping(value = "/getEnrolledCourses")
+    public Response getEnrolledCourses(@RequestParam int studentId){
+        return studentService.getEnrolledCourses(studentId);
+    }
 }

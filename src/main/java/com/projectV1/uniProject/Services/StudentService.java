@@ -26,16 +26,18 @@ public class StudentService {
     private UserRepository userRepository;
 
     public Response addStudent(Student student, int id) throws UserNotFoundException {
-
-        Users user = userRepository.findById(id).get();
-
-        if (user == null) {
+        Users user;
+        try {
+            user = userRepository.findById(id).get();
+            student.setUser(user);
+            studentRepository.save(student);
+            Response response = new Response(200, "Student added successfully", student);
+            return response;
+        } catch (Exception e) {
             throw new UserNotFoundException("addStudent: User with id: " + id + " not found");
+
         }
-        student.setUser(user);
-        studentRepository.save(student);
-        Response response = new Response(200, "Student added successfully", student);
-        return response;
+
 
 
     }
@@ -68,6 +70,15 @@ public class StudentService {
             return response;
         }
         Response response = new Response(200, "Students retrieved successfully", studentList);
+        return response;
+    }
+
+    public Response getEnrolledCourses(int studentId) {
+
+        Student student = studentRepository.findById(studentId).get();
+        Set<StudentEnrollCourse> studentEnrollCourses = student.getEnrolledCourses();
+
+        Response response = new Response(200,"Enrolled courses for student"+ student.getFullName()+" retrieved!",studentEnrollCourses);
         return response;
     }
 }
