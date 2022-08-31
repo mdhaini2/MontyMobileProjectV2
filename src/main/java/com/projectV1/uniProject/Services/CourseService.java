@@ -1,10 +1,8 @@
 package com.projectV1.uniProject.Services;
 
-import com.projectV1.uniProject.Entities.Course;
-import com.projectV1.uniProject.Entities.Instructor;
-import com.projectV1.uniProject.Entities.Student;
-import com.projectV1.uniProject.Entities.StudentEnrollCourse;
+import com.projectV1.uniProject.Entities.*;
 import com.projectV1.uniProject.Exceptions.*;
+import com.projectV1.uniProject.Producer.Producer;
 import com.projectV1.uniProject.Repositories.CourseRepository;
 import com.projectV1.uniProject.Repositories.InstructorRepository;
 import com.projectV1.uniProject.Repositories.StudentEnrollCourseRepository;
@@ -13,6 +11,7 @@ import com.projectV1.uniProject.Utils.Response;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +28,8 @@ public class CourseService {
     InstructorRepository instructorRepository;
     @Autowired
     StudentRepository studentRepository;
-
+    @Autowired
+    private Producer producer;
     @Autowired
     StudentEnrollCourseRepository studentEnrollCourseRepository;
 
@@ -39,7 +39,7 @@ public class CourseService {
         course.setInstructor(instructor);
 
         courseRepository.save(course);
-        Response response = new Response(200, "Course Added Successfully", course);
+        Response response = new Response(HttpStatus.OK.value(), "Course Added Successfully", course);
         return response;
     }
 
@@ -73,11 +73,21 @@ public class CourseService {
 
         studentRepository.save(student);
         courseRepository.save(course);
-
-        Response response = new Response(200, "Student enrolled successfully!", student.getEnrolledCourses());
+        String description =student.getFullName()+ " ";
+        for(StudentEnrollCourse studentEnrollCourse1: student.getEnrolledCourses())
+            description += description(studentEnrollCourse1) + ",";
+        log.info(description);
+        Response response = new Response(200, "Student enrolled successfully!", description);
 
         return response;
 
+    }
+
+    public String description(StudentEnrollCourse studentEnrollCourse){
+        String courseName = studentEnrollCourse.getCourse().getName();
+        String courseStatus = studentEnrollCourse.getStatus();
+        String description = courseStatus+ " course "+ courseName;
+        return description;
     }
 
     public Response InstructorUpdateStudentGrade(int instructorId, int studentEnrollId, String grade) throws UserNotFoundException, InstructorNotFoundException, StudentEnrollException, InstructorCourseException, GradeNotValidException {
@@ -122,8 +132,12 @@ public class CourseService {
         Student student = studentEnrollCourse.getStudent();
         student.setGpa(newGpa);
         studentRepository.save(student);
-
-
+        TransferStudentGrade transferStudentGrade = new TransferStudentGrade(
+                studentEnrollCourse.getCourse().getName(),
+                student.getFullName(),
+                studentEnrollCourse.getStudentGrade(),
+                studentEnrollCourse.getStatus());
+        producer.sendJsonMessage(transferStudentGrade);
         Response response = new Response(200, "Course grade updated successfully", studentEnrollCourse);
         return response;
 

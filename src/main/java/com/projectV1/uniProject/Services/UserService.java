@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -25,7 +26,7 @@ public class UserService {
     private MyUserDetailsService userDetailsService;
     @Autowired
     private JwtUtil jwtTokenUtil;
-
+    private HttpServletRequest request;
 
     public Object authenticateUser(String username, String password) {
 
@@ -80,8 +81,12 @@ public class UserService {
     }
 
     public Response getAllUsers(){
+
+
         List<Users> usersList = userRepository.findAll();
         Response response = new Response(200,"Users retrieved successfully",usersList);
+        response.setMessage(jwtTokenUtil.getToken(request));
         return response;
     }
+
 }

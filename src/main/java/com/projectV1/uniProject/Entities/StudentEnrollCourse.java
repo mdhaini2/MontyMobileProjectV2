@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class StudentEnrollCourse implements Serializable {
+public class StudentEnrollCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
